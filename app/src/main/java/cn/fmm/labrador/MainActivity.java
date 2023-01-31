@@ -1,4 +1,4 @@
-package cn.fmm.labuladuo;
+package cn.fmm.labrador;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace 'cn.fmm.labuladuo'
+    namespace 'cn.fmm.labrador'
     compileSdk 32
 
     defaultConfig {
-        applicationId "cn.fmm.labuladuo"
+        applicationId "cn.fmm.labrador"
         minSdk 21
         targetSdk 32
         versionCode 1
