@@ -1,7 +1,6 @@
 package cn.fmm.java_learn.design_pattern.state_pattern.status;
 
 import cn.fmm.java_learn.common_utils.Log;
-import cn.fmm.java_learn.design_pattern.state_pattern.LiftStatus;
 import cn.fmm.java_learn.design_pattern.state_pattern.LiftStatusMachine;
 
 /**
@@ -10,15 +9,6 @@ import cn.fmm.java_learn.design_pattern.state_pattern.LiftStatusMachine;
  * Dec : 电梯运行状态
  **/
 public class RunningStatus extends Status {
-
-    public RunningStatus(LiftStatusMachine machine) {
-        super(machine);
-    }
-
-    @Override
-    public String getStatus() {
-        return LiftStatus.status_running;
-    }
 
     @Override
     public void open() {
@@ -39,7 +29,7 @@ public class RunningStatus extends Status {
 
     @Override
     public void stop() {
-        machine.setLiftStatus(LiftStatusMachine.sStopStatus);
-        machine.stop();
+        super.machine.setCurStatus(LiftStatusMachine.sStopStatus);
+        super.machine.stop();
     }
 }

@@ -11,11 +11,9 @@ public abstract class Status {
 
     public LiftStatusMachine machine;
 
-    public Status(LiftStatusMachine machine) {
+    public void setLiftStateMachine(LiftStatusMachine machine) {
         this.machine = machine;
     }
-
-    public abstract String getStatus();
 
     public abstract void open();
 

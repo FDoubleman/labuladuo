@@ -1,5 +1,7 @@
 package cn.fmm.java_learn.design_pattern.state_pattern;
 
+import cn.fmm.java_learn.design_pattern.state_pattern.status.CloseStatus;
+
 /**
  * author:fumm
  * Date : 2023/ 01/ 31 15:49
@@ -10,6 +12,7 @@ public class StatePatternTest {
 
     public static void main(String[] args) {
         LiftStatusMachine machine = new LiftStatusMachine();
+
         machine.open();
         machine.stop();
         machine.running();

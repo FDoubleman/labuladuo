@@ -20,22 +20,26 @@ public class LiftStatusMachine {
     /**
      * 初始化所有电梯状态 电梯门打开、电梯门关闭、电梯运行、电梯停止
      */
-    public static Status sOpenStatus;
-    public static Status sCloseStatus;
-    public static Status sRunningStatus;
-    public static Status sStopStatus;
+    public final static Status sOpenStatus = new OpenStatus();
+    public final static Status sCloseStatus = new CloseStatus();
+    public final static Status sRunningStatus = new RunningStatus();
+    public final static Status sStopStatus = new StopStatus();
+
+
 
     public LiftStatusMachine() {
-        sOpenStatus = new OpenStatus(this);
-        sCloseStatus = new CloseStatus(this);
-        sRunningStatus = new RunningStatus(this);
-        sStopStatus = new StopStatus(this);
         // 默认电梯是停止状态
-        curStatus = new StopStatus(this);
+        curStatus = new StopStatus();
+        curStatus.setLiftStateMachine(this);
     }
 
-    public void setLiftStatus(Status status) {
+    public Status getCurStatus(){
+        return curStatus;
+    }
+
+    public void setCurStatus(Status status) {
         curStatus = status;
+        curStatus.setLiftStateMachine(this);
     }
 
     public void open() {

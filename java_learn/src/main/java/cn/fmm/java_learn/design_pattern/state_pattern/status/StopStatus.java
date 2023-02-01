@@ -2,7 +2,6 @@ package cn.fmm.java_learn.design_pattern.state_pattern.status;
 
 import cn.fmm.java_learn.common_utils.Log;
 import cn.fmm.java_learn.design_pattern.state_pattern.LiftStatusMachine;
-import cn.fmm.java_learn.design_pattern.state_pattern.LiftStatus;
 
 /**
  * author:fumm
@@ -10,20 +9,13 @@ import cn.fmm.java_learn.design_pattern.state_pattern.LiftStatus;
  * Dec : 电梯停止状态
  **/
 public class StopStatus extends Status {
-    public StopStatus(LiftStatusMachine machine) {
-        super(machine);
-    }
 
-    @Override
-    public String getStatus() {
-        return LiftStatus.status_stop;
-    }
 
     @Override
     public void open() {
         // 电梯停止状态 可以打开电梯门
-        machine.setLiftStatus(LiftStatusMachine.sOpenStatus);
-        machine.open();
+        super.machine.setCurStatus(LiftStatusMachine.sOpenStatus);
+        super.machine.open();
     }
 
     @Override
@@ -36,8 +28,8 @@ public class StopStatus extends Status {
     @Override
     public void running() {
         // 电梯停止状态  可以再次运行
-        machine.setLiftStatus(LiftStatusMachine.sRunningStatus);
-        machine.running();
+        super.machine.setCurStatus(LiftStatusMachine.sRunningStatus);
+        super.machine.running();
     }
 
     @Override
