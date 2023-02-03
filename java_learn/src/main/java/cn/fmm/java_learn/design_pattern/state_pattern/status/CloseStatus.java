@@ -10,8 +10,6 @@ import cn.fmm.java_learn.design_pattern.state_pattern.LiftStatusMachine;
  * Dec : 电梯关门状态
  **/
 public class CloseStatus extends Status {
-
-
     // 电梯关门状态 可以打开
     @Override
     public void open() {
@@ -19,7 +17,6 @@ public class CloseStatus extends Status {
         super.machine.setCurStatus(LiftStatusMachine.sOpenStatus);
         // 打开电梯
         super.machine.open();
-
     }
 
     @Override

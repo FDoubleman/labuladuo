@@ -8,13 +8,13 @@ import cn.fmm.java_learn.design_pattern.state_pattern.LiftStatusMachine;
  * Dec : 状态接口
  **/
 public abstract class Status {
-
+    // 定义一个环境角色 ，提供子类访问
     public LiftStatusMachine machine;
-
+    // 设置环境角色
     public void setLiftStateMachine(LiftStatusMachine machine) {
         this.machine = machine;
     }
-
+    // 行为 方法
     public abstract void open();
 
     public abstract void close();

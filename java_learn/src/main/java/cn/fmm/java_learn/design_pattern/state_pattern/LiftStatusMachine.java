@@ -25,8 +25,6 @@ public class LiftStatusMachine {
     public final static Status sRunningStatus = new RunningStatus();
     public final static Status sStopStatus = new StopStatus();
 
-
-
     public LiftStatusMachine() {
         // 默认电梯是停止状态
         curStatus = new StopStatus();

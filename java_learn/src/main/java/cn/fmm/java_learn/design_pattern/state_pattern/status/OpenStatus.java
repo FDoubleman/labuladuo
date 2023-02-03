@@ -9,8 +9,6 @@ import cn.fmm.java_learn.design_pattern.state_pattern.LiftStatusMachine;
  * Dec : 电梯开门状态
  **/
 public class OpenStatus extends Status {
-
-
     @Override
     public void open() {
         Log.println("电梯打开 ");

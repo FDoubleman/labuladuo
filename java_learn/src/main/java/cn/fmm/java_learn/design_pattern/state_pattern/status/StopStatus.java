@@ -9,8 +9,6 @@ import cn.fmm.java_learn.design_pattern.state_pattern.LiftStatusMachine;
  * Dec : 电梯停止状态
  **/
 public class StopStatus extends Status {
-
-
     @Override
     public void open() {
         // 电梯停止状态 可以打开电梯门
